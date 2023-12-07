@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Mahasiswa</title>
+</head>
+<body>
+<form th:action="@{~/mahasiswa/save}" method="post">
+    <label>Jurusan :</label><br>
+    <select name="jurusanId">
+        <option value="">Pilih Jurusan</option>
+        <option th:each="jurusan :${dataJurusan}"
+                th:value="${jurusan.id}"
+                th:text="|${jurusan.code} - ${jurusan.name}|"></option>
+    </select><br>
+
+    <label>Fakultas :</label><br>
+    <select name="fakultasId">
+        <option value="">Pilih Fakultas</option>
+        <option th:each="fakultas :${dataFakultas}"
+                th:value="${fakultas.id}"
+                th:text="|${fakultas.code} - ${fakultas.name}|"></option>
+    </select><br>
+
+    <label>Name :</label><br>
+    <input type="text" name="name" placeholder="Enter Name"><br>
+
+    <label>Nim :</label><br>
+    <input type="text" name="nim" placeholder="Enter Nim"><br>
+
+    <label>Gender :</label><br>
+    <select name="gender">
+        <option value="">Pilih Gender</option>
+        <option value="Pria">Pria</option>
+        <option value="Wanita">Wanita</option>
+    </select><br>
+
+    <label>Alamat :</label><br>
+    <input type="text" name="alamat" placeholder="Enter Alamat"><br>
+
+    <label>Tempat Lahir :</label><br>
+    <input type="text" name="tmptLahir" placeholder="Enter Tmpt Lahir"><br>
+
+    <label>Tanggal Lahir :</label><br>
+    <input type="date" name="tglLahir" placeholder="Enter Tgl Lahir"><br>
+
+    <label>Agama :</label><br>
+    <select name="agama">
+        <option value="Islam">Islam</option>
+        <option value="Kristen Protestan">Kristen Protestan</option>
+        <option value="Kristen Katolik">Kristen Katolik</option>
+        <option value="Hindu">Hindu</option>
+        <option value="Buddha">Buddha</option>
+        <option value="Konghucu">Konghucu</option>
+    </select><br>
+
+    <button type="submit">Save</button>
+    <a th:href="@{~/mahasiswa}">Back</a>
+
+</form>
+</body>
+</html>

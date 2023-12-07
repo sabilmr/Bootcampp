@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kelas-Index</title>
+</head>
+<body>
+    <h2>KELAS</h2>
+    <a th:href="@{~/home}">Home</a>
+    <a th:href="@{~/kelas/add}">Add Kelas</a>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Code</th>
+        <th>Name Hari</th>
+        <th>Jam Mulai</th>
+        <th>Jam Selesai</th>
+        <th>Status</th>
+        <th>Semester</th>
+        <th>Tahun Ajaran</th>
+        <th>Kuota</th>
+        <th>Bisa Online</th>
+        <th>Ruang</th>
+        <th>Dosen</th>
+        <th>Mata Kuliah</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each=" kelas :${dataList}">
+        <td th:text="${kelas.code}"></td>
+        <td th:text="${kelas.nameHari}"></td>
+        <td th:text="${kelas.jamMulai}"></td>
+        <td th:text="${kelas.jamSelesai}"></td>
+        <td th:text="${kelas.status}"></td>
+        <td th:text="${kelas.semester}"></td>
+        <td th:text="${kelas.tahunAjaran}"></td>
+        <td th:text="${kelas.kuota}"></td>
+        <td th:text="${kelas.bisaOnline}"></td>
+        <td th:text="${kelas.ruangName}"></td>
+        <td th:text="${kelas.dosenName}"></td>
+        <td th:text="${kelas.mataKuliahName}"></td>
+        <td>
+            <a th:href="@{~/kelas/edit/{id}(id=${kelas.id})}">Edit</a>
+            <a th:href="@{~/kelas/delete/{id}(id=${kelas.id})}">Delete</a>
+            <a th:href="@{~/kelas/detail/{id}(id=${kelas.id})}">Detail</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

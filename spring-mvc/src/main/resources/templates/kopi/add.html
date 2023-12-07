@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>ADD KOPI</h1>
+<form th:action="@{~/kopi/save}" method="post">
+
+  <label>Id</label><br>
+  <input type="text" name="id" id="id"><br/>
+
+  <label>Kode</label><br>
+  <input type="text" name="kode" id="kode"><br/>
+
+  <label>NameKopi</label><br>
+  <input type="text" name="nameKopi" id="nameKopi"><br/>
+
+  <label>Diproduksi</label><br>
+  <input type="text" name="diproduksi" id="diproduksi"><br/>
+
+  <label>Deskripsi</label><br>
+ <textarea type="text" name="deskripsi" id="deskripsi" rows="5" cols="20"></textarea><br/>
+
+  <label>Harga</label><br>
+  <input type="text" name="harga" id="harga"><br/>
+
+  <label>Stock</label><br>
+  <input type="text" name="stock" id="stock"><br/>
+
+  <button type="submit">Simpan</button>
+
+</form>
+</body>
+</html>

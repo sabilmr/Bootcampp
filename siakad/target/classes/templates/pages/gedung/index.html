@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Gedung-index</title>
+</head>
+<body>
+    <h2>GEDUNG</h2>
+    <a th:href="@{~/home}">Home</a>
+    <a th:href="@{~/gedung/add}">Add Gedung</a>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Jumlah Lantai</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="gedung :${dataList}">
+        <td th:text="${gedung.code}"></td>
+        <td th:text="${gedung.name}"></td>
+        <td th:text="${gedung.jumlahLantai}"></td>
+        <td>
+            <a th:href="@{~/gedung/edit/{id}(id=${gedung.id})}">Edit</a>
+            <a th:href="@{~/gedung/delete/{id}(id=${gedung.id})}">Delete</a>
+            <a th:href="@{~/gedung/detail/{id}(id=${gedung.id})}">Detail</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

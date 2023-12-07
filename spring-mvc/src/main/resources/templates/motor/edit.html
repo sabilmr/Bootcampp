@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Edit Motor</h1>
+<form th:action="@{~/motor/update}" method="post">
+   <label>ID</label>
+    <input type="text" name="id" id="id" th:value="${motor.id}"><br/>
+
+    <label>Kode</label>
+    <input type="text" name="kode" id="kode" th:value="${motor.kode}"><br/>
+
+   <label>Name</label>
+    <input type="text" name="name" id="name" th:value="${motor.name}"><br/>
+
+    <label>Merk</label>
+    <input type="text" name="merk" id="merk" th:value="${motor.merk}"><br/>
+
+    <label>PlatNomor</label>
+    <input type="text" name="platNomor" id="platNomor" th:value="${motor.platNomor}"><br/>
+
+    <label>BahanBakar</label>
+    <input type="text" name="bahanBakar" id="bahanBakar" th:value="${motor.bahanBakar}"><br/>
+
+    <label>Cc</label>
+    <input type="text" name="cc" id="cc" th:value="${motor.cc}"><br/>
+
+    <label>Warna</label>
+    <input type="text" name="warna" id="warna" th:value="${motor.warna}"><br/>
+
+    <label>Harga</label>
+    <input type="text" name="harga" id="harga" th:value="${motor.harga}"><br/>
+
+    <label>Stock</label>
+    <input type="text" name="stock" id="stock" th:value="${motor.stock}"><br/>
+
+    <button type="submit">Simpan</button>
+
+</form>
+</body>
+</html>

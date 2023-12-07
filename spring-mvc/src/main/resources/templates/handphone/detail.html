@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Detail Handphone</h1>
+<form th:action="@{~/handphone/save}" method="post">
+    <label>ID</label>
+    <input type="text" name="id" id="id" th:value="${handphone.id}"><br/>
+
+    <label>Code</label>
+    <input type="text" name="code" id="code" th:value="${handphone.code}"><br/>
+
+    <label>NameMerk</label>
+    <input type="text" name="nameMerk" id="nameMerk" th:value="${handphone.nameMerk}"><br/>
+
+    <label>Ram</label>
+    <input type="text" name="ram" id="ram" th:value="${handphone.ram}"><br/>
+
+    <label>Batrai</label>
+    <input type="text" name="batrai" id="batrai" th:value="${handphone.batrai}"><br/>
+
+    <label>Storage</label>
+    <input type="text" name="storage" id="storage" th:value="${handphone.storage}"><br/>
+
+    <label>Layar</label>
+    <input type="text" name="layar" id="layar" th:value="${handphone.layar}"><br/>
+
+    <label>Warna</label>
+    <input type="text" name="warna" id="warna" th:value="${handphone.warna}"><br/>
+
+    <label>Dimensi</label>
+    <input type="text" name="dimensi" id="dimensi" th:value="${handphone.dimensi}"><br/>
+
+    <label>TahunRilis</label>
+    <input type="text" name="tahunRilis" id="tahunRilis" th:value="${handphone.tahunRilis}"><br/>
+
+    <label>Harga</label>
+    <input type="text" name="harga" id="harga" th:value="${handphone.harga}"><br/>
+
+    <label>Stock</label>
+    <input type="text" name="stock" id="stock" th:value="${handphone.stock}">
+
+</form>
+
+</body>
+</html>

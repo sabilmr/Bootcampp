@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>EDIT KOPI</h1>
+<form th:action="@{~/kopi/update}" method="post">
+    <label>Id</label><br>
+    <input type="text" name="id" id="id" th:value="${kopi.id}"><br/>
+
+    <label>Kode</label><br>
+    <input type="text" name="kode" id="kode" th:value="${kopi.kode}"><br/>
+
+    <label>NameKopi</label><br>
+    <input type="text" name="nameKopi" id="nameKopi" th:value="${kopi.nameKopi}"><br/>
+
+    <label>Diproduksi</label><br>
+    <input type="text" name="diproduksi" id="diproduksi" th:value="${kopi.diproduksi}"><br/>
+
+    <label>deskripsi</label><br>
+    <textarea type="text" name="deskripsi" id="deskripsi" rows="5" cols="20" th:text="${kopi.deskripsi}"></textarea><br/>
+
+    <label>Harga</label><br>
+    <input type="text" name="harga" id="harga" th:value="${kopi.harga}"><br/>
+
+    <label>Stock</label><br>
+    <input type="text" name="stock" id="stock" th:value="${kopi.stock}"><br/>
+
+    <button type="submit">Simpan</button>
+
+</form>
+
+</body>
+</html>

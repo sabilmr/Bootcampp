@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Fakultas</title>
+</head>
+<body>
+<form th:action="@{~/fakultas/save}" method="post">
+    <label>Code :</label><br>
+    <input type="text" name="code" placeholder="Enter Code"><br>
+
+    <label>Name :</label><br>
+    <input type="text" name="name" placeholder="Enter Name"><br>
+
+    <button type="submit">Save</button>
+    <a th:href="@{~/fakultas}">Back</a>
+</form>
+
+</body>
+</html>

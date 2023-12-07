@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Fakultas</title>
+</head>
+<body>
+<form th:action="@{~/fakultas/update}" method="post">
+    <input type="hidden" name="id" th:value="${fakultas.id}">
+
+    <label>Code :</label><br>
+    <input type="text" name="code" th:value="${fakultas.code}" placeholder="Enter Code"><br>
+
+    <label>Name :</label><br>
+    <input type="text" name="name" th:value="${fakultas.name}" placeholder="Enter name"><br>
+
+    <button type="submit">Save</button>
+    <a th:href="@{~/fakultas}">Back</a>
+
+</form>
+
+</body>
+</html>

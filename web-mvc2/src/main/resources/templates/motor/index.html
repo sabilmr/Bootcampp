@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>motor</title>
+</head>
+<body>
+<h3>MOTOR - INDEX</h3>
+<a th:href="@{~/motor/add}">Ini tempat add</a>
+<p>Welocome to motor index</p>
+<p th:text="${datajudul}">Judul</p>
+
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Jenis</th>
+        <th>Bahan Bakar</th>
+        <th>Plat Nomor</th>
+        <th>Harga</th>
+    </tr>
+    <tr th:each="listMotor :${listMotor}">
+        <td th:text="${listMotor.id}"></td>
+        <td th:text="${listMotor.name}"></td>
+        <td th:text="${listMotor.jenis}"></td>
+        <td th:text="${listMotor.bahanBakar}"></td>
+        <td th:text="${listMotor.platNomor}"></td>
+        <td th:text="${listMotor.harga}"></td>
+
+        <td>
+            <a th:href="@{~/motor/edit/{id}(id=${listMotor.id})}">Mengedit</a>
+            <a th:href="@{~/motor/delete/{id}(id=${listMotor.id})}">Menghapus</a>
+            <a th:href="@{~/motor/detail/{id}(id=${listMotor.id})}">Detail</a>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="5">DATA JUMLAH</td>
+        <td><strong th:text="${dataJumlah}"></strong>ITEM</td>
+    </tr>
+    </thead>
+</table>
+</body>
+</html>

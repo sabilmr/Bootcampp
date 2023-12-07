@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail Mata Kuliah</title>
+</head>
+<body>
+<form th:action="@{~/matakuliah/save}" method="post">
+    <label>Code :</label><br>
+    <input type="text" name="code" th:value="${mataKuliah.code}"><br>
+
+    <label>Name :</label><br>
+    <input type="text" name="name" th:value="${mataKuliah.name}"><br>
+
+    <label>SKS :</label><br>
+    <input type="text" name="sks" th:value="${mataKuliah.sks}"><br>
+
+    <a th:href="@{~/matakuliah}">Back</a>
+
+</form>
+</body>
+</html>

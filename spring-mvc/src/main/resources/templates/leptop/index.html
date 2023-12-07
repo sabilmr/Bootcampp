@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/main}">
+<head>
+    <meta charset="UTF-8">
+    <title>Leptop - Index</title>
+</head>
+<body>
+<div class="row mb-2" layout:fragment="breadcrumb">
+    <div class="col-sm-6">
+        <h1 class="m-0">INDEX LAPTOP</h1>
+    </div>
+    <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">Laptop</li>
+        </ol>
+    </div>
+</div>
+<div class="row" layout:fragment="content">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="card">
+            <div class="card-header bg-primary">
+                <h3 class="card-title">Laptop</h3>
+
+            <div class="card-tools">
+                <div class="input-group input-group-sm" style="width: 200px;">
+                    <input type="text" name="table-search" class="form-control float-right" placeholder="Search">
+                    <div class="input-group-append">
+                        <button type="submit" class="btn-default"><i class="fas fa-search"></i></button>
+                        <a th:href="@{~/leptop/add}" id="btn-add" class="btn btn-primary"><i class="fas fa-plus"></i></a>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="card-body">
+                <table id="table-data" class="table">
+                    <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Kode</th>
+                        <th>Name</th>
+                        <th>Ram</th>
+                        <th>Prosesor</th>
+                        <th>Storage</th>
+                        <th>Os</th>
+                        <th>Layar</th>
+                        <th>Dimensi</th>
+                        <th>Warna</th>
+                        <th>TahunRilis</th>
+                        <th>Harga</th>
+                        <th>Stock</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="leptop :${leptop}">
+                        <td th:text="${leptop.id}"></td>
+                        <td th:text="${leptop.kode}"></td>
+                        <td th:text="${leptop.name}"></td>
+                        <td th:text="${leptop.ram}"></td>
+                        <td th:text="${leptop.prosesor}"></td>
+                        <td th:text="${leptop.storage}"></td>
+                        <td th:text="${leptop.os}"></td>
+                        <td th:text="${leptop.layar}"></td>
+                        <td th:text="${leptop.dimensi}"></td>
+                        <td th:text="${leptop.warna}"></td>
+                        <td th:text="${leptop.tahunRilis}"></td>
+                        <td>Rp.<strong th:text="${leptop.harga}"></strong></td>
+                        <td><strong th:text="${leptop.stock}"></strong>pcs</td>
+                        <td>
+                            <a th:href="@{~/leptop/edit/{id}(id=${leptop.id})}" class="btn btn-xs btn-warning btn-edit">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <a th:href="@{~/leptop/delete/{id}(id=${leptop.id})}" class="btn btn-xs btn-danger btn-delete">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                            <a th:href="@{~/leptop/detail/{id}(id=${leptop.id})}" class="btn btn-xs btn-success btn-detail">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="12"> Jumlah Data</td>
+                        <td><strong th:text="${jumlah}"></strong>Item</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

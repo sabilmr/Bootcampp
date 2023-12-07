@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Kelas Detail - Index</title>
+</head>
+<body>
+        <h2>KELAS DETAIL</h2>
+        <a th:href="@{~/home}">Home</a>
+        <a th:href="@{~/kelasdetail/add}">Add Kelas Detail</a>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Kelas</th>
+        <th>Name Mahasiswa</th>
+        <th>Status</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="kelasDetail :${dataKelasDetail}">
+        <td th:text="${kelasDetail.kelas.code}"></td>
+        <td th:text="${kelasDetail.mahasiswa.name}"></td>
+        <td th:text="${kelasDetail.status}"></td>
+        <td>
+            <a th:href="@{~/kelasdetail/edit/{id}(id=${kelasDetail.id})}">Edit</a>
+            <a th:href="@{~/kelasdetail/delete/{id}(id=${kelasDetail.id})}">Delete</a>
+            <a th:href="@{~/kelasdetail/detail/{id}(id=${kelasDetail.id})}">Detail</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

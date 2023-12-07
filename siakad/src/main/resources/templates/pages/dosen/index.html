@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dosen-Index</title>
+</head>
+<body>
+    <h2>DOSEN</h2>
+    <a th:href="@{~/home}">Home</a>
+    <a th:href="@{~/dosen/add}">Add Dosen</a>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Nip</th>
+        <th>Name</th>
+        <th>Jenis Kelamin</th>
+        <th>Alamat</th>
+        <th>Gelar</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each=" dosen :${dataList}">
+        <td th:text="${dosen.nip}"></td>
+        <td th:text="${dosen.name}"></td>
+        <td th:text="${dosen.jk}"></td>
+        <td th:text="${dosen.alamat}"></td>
+        <td th:text="${dosen.gelar}"></td>
+        <td>
+            <a th:href="@{~/dosen/edit/{id}(id=${dosen.id})}">Edit</a>
+            <a th:href="@{~/dosen/delete/{id}(id=${dosen.id})}">Delete</a>
+            <a th:href="@{~/dosen/detail/{id}(id=${dosen.id})}">Detail</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

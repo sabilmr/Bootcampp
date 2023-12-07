@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Fakultas-Index</title>
+</head>
+<body>
+    <h2>FAKULTAS</h2>
+    <a th:href="@{~/home}">Home</a> &nbsp;
+    <a th:href="@{~/fakultas/add}">Add Fakultas</a>
+<table border="1">
+  <thead>
+  <tr>
+    <th>Code</th>
+    <th>Name</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="fakultas :${dataList}">
+    <td th:text="${fakultas.code}"></td>
+    <td th:text="${fakultas.name}"></td>
+    <td>
+        <a th:href="@{~/fakultas/edit/{id}(id=${fakultas.id})}">Edit</a>
+        <a th:href="@{~/fakultas/delete/{id}(id=${fakultas.id})}">Delete</a>
+        <a th:href="@{~/fakultas/detail/{id}(id=${fakultas.id})}">Detail</a>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+</body>
+</html>

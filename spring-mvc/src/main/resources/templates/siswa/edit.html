@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>EDIT SISWA</h1>
+<form th:action="@{~/siswa/update}" method="post">
+    <label>Id</label><br>
+    <input type="text" name="id" id="id" th:value="${siswa.id}"><br/>
+
+    <label>Name</label><br>
+    <input type="text" name="name" id="name" th:value="${siswa.name}"><br/>
+
+    <label>Usia</label><br>
+    <input type="text" name="usia" id="usia" th:value="${siswa.usia}"><br/>
+
+    <label>TempatKuliah</label><br>
+    <input type="text" name="tempatKuliah" id="tempatKuliah" th:value="${siswa.tempatKuliah}"><br/>
+
+    <label>Jurusan</label><br>
+    <input type="text" name="jurusan" id="jurusan" th:value="${siswa.jurusan}"><br/>
+
+    <label>TinggiBadan</label><br>
+    <input type="text" name="tinggiBadan" id="tinggiBadan" th:value="${siswa.tinggiBadan}"><br/>
+
+    <label>JenisKulit</label><br>
+    <input type="text" name="jenisKulit" id="jenisKulit" th:value="${siswa.jenisKulit}"><br/>
+
+    <label>JenisKelamin</label><br>
+    <input type="text" name="jenisKelamin" id="jenisKelamin" th:value="${siswa.jenisKelamin}"><br/>
+
+    <label>Alamat</label><br>
+    <input type="text" name="alamat" id="alamat" th:value="${siswa.alamat}"><br/>
+
+    <button type="submit">Simpan</button>
+</form>
+
+</body>
+</html>

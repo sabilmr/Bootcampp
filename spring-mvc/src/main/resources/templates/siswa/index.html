@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+      <h1>SISWA - INDEX</h1>
+      <a th:href="@{~/siswa/add}">TEMPAT ADEDE DISINI</a>
+      <p>Welcome To Siswa</p>
+      <p th:text="${datajudul}">judul</p>
+<table>
+  <thead>
+  <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Usia</th>
+      <th>TempatKuliah</th>
+      <th>Jurusan</th>
+      <th>TinggiBadan</th>
+      <th>JenisKulit</th>
+      <th>JenisKelamin</th>
+      <th>Alamat</th>
+  </tr>
+  <tr th:each="siswa :${siswa}">
+      <td th:text="${siswa.id}"></td>
+      <td th:text="${siswa.name}"></td>
+      <td th:text="${siswa.usia}"></td>
+      <td th:text="${siswa.tempatKuliah}"></td>
+      <td th:text="${siswa.jurusan}"></td>
+      <td><strong th:text="${siswa.tinggiBadan}"></strong>CM</td>
+      <td th:text="${siswa.jenisKulit}"></td>
+      <td th:text="${siswa.jenisKelamin}"></td>
+      <td th:text="${siswa.alamat}"></td>
+      <td>
+          <a th:href="@{~/siswa/edit/{id}(id=${siswa.id})}">Edit</a>
+          <a th:href="@{~/siswa/delete/{id}(id=${siswa.id})}">Delete</a>
+          <a th:href="@{~/siswa/detail/{id}(id=${siswa.id})}">Detail</a>
+      </td>
+  </tr>
+  <tr>
+      <td colspan="8">Jumlah Data</td>
+      <td><strong th:text="${jumlah}"></strong>Item</td>
+  </tr>
+  </thead>
+</table>
+</body>
+</html>

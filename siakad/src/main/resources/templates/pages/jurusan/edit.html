@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Jurusan</title>
+</head>
+<body>
+<form th:action="@{~/jurusan/update}" method="post">
+    <input type="hidden" name="id" th:value="${jurusan.id}"><br>
+
+    <label>Fakultas :</label><br>
+    <select name="fakultasId">
+        <option value="">Pilih Fakultas</option>
+        <option th:each="fakultas :${dataFakultas}" th:value="${fakultas.id}" th:text="|${fakultas.code} - ${fakultas.name}|"
+        th:selected="${jurusan.fakultasId == fakultas.id}"></option>
+    </select><br>
+
+    <label>Code :</label><br>
+    <input type="text" name="code" th:value="${jurusan.code}"><br>
+
+    <label>Name :</label><br>
+    <input type="text" name="name" th:value="${jurusan.name}"><br>
+
+    <button type="submit">Save</button> &nbsp;
+    <a th:href="@{~/jurusan}">Back</a>
+
+</form>
+
+</body>
+</html>

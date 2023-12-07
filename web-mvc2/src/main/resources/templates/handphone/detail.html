@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{~/handphone/update}" method="post">
+    <label>Id</label><br>
+    <input type="text" id="id" name="id" th:value="${handphone.id}"><br>
+
+    <label>Code</label><br>
+    <input type="text" id="code" name="code" th:value="${handphone.code}"><br>
+
+    <label>Name</label><br>
+    <input type="text" id="name" name="name" th:value="${handphone.name}"><br>
+
+    <label>Ram</label><br>
+    <input type="text" id="ram" name="ram" th:value="${handphone.ram}"><br>
+
+    <label>Batrai</label><br>
+    <input type="text" id="bartai" name="batrai" th:value="${handphone.batrai}"><br>
+
+    <label>Harga</label><br>
+    <input type="text" id="harga" name="harga" th:value="${handphone.harga}"><br>
+
+</form>
+</body>
+</html>

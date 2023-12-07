@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Siswa Detail</title>
+</head>
+<body>
+<form th:action="@{~/siswa/update}" method="post">
+    <label>Id</label><br>
+    <input type="text" id="id" name="id" th:value="${siswa.id}"><br>
+
+    <label>Name</label><br>
+    <input type="text" id="name" name="name" th:value="${siswa.name}"><br>
+
+    <label>Tempat Kuliah</label><br>
+    <input type="text" id="tempatKuliah" name="tempatKuliah" th:value="${siswa.tempatKuliah}"><br>
+
+    <label>Jurusan</label><br>
+    <input type="text" id="jurusan" name="jurusan" th:value="${siswa.jurusan}"><br>
+
+    <label>Alamat</label><br>
+    <input type="text" id="alamat" name="alamat" th:value="${siswa.alamat}"><br>
+</form>
+</body>
+</html>

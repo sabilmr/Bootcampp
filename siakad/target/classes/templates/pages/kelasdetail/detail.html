@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kelas Detail</title>
+</head>
+<body>
+<form th:action="@{~/kelasdetail/update}" method="post">
+    <label>Kelas :</label><br>
+    <input type="text" name="kelas.code" th:value="${dataKelasDetail.kelas.code}"><br>
+
+    <label>Name Mahasiswa :</label><br>
+    <input type="text"  name="mahasiswa.name" th:value="${dataKelasDetail.mahasiswa.name}"><br>
+
+    <label>Status :</label><br>
+    <input type="text" name="status" th:value="${dataKelasDetail.status}"><br>
+
+    <a th:href="@{~/kelasdetail}">Back</a>
+</form>
+
+</body>
+</html>

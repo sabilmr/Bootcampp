@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<h2>Sabilla Muhammad Rayhan</h2>
+<p>Welcome to sabila</p>
+
+<form action="sabil">
+  <label for="cars">choese a car:</label>
+  <select id="cars" name="cars" size="4" multiple>
+    <option value="volvo">volvo</option>
+    <option value="saab">saab</option>
+    <option value="audi">audi</option>
+    <option value="fiat" selected>fiat</option>
+  </select>
+  <input type="submit">
+</form>
+
+<h1>Textarea</h1>
+<p>OKELAH</p>
+<form>
+  <textarea name="massage" style="width: 200px; height: 300px;">sabilla muhammad rayhan</textarea><br>
+  <input type="submit">
+</form>
+
+<button type="button" onclick="alert('sabilla')">klik saya</button>
+
+<form>
+  <fieldset>
+    <legend>Personalia</legend>
+    <label>Fist Name:</label><br>
+    <input type="text" id="fname" name="fname" value="sabil"><br>
+    <label>Last Name</label><br>
+    <input type="text" id="lname" name="lname" value="sindi"><br>
+    <input type="submit" value="SIMPAN">
+  </fieldset>
+</form>
+
+<form>
+  <input list="browsers" name="browser">
+  <datalist id="browsers">
+    <option value="Internet exsplorer"></option>
+    <option value="Firefox"></option>
+    <option value="Crome"></option>
+    <option value="Opera"></option>
+    <option value="Safari"></option>
+  </datalist>
+  <input type="submit">
+</form>
+
+<form action="okelah" oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+0
+  <input type="range" id="a" name="a" value="50">
+  100 +
+  <input type="number" id="b" name="b" value="50">
+  =
+  <output name="x" for="a b"></output>
+  <br><br>
+</form>
+</body>
+</html>

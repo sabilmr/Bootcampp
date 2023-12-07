@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Sepeda - Index</h2>
+<a th:href="@{~/sepeda/add}">Tempat Add Disini</a>
+<p>Welcome to sepeda index</p>
+<p th:text="${dataJudul}">Judul</p>
+
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Kode</th>
+        <th>Name</th>
+        <th>Merk</th>
+        <th>Plat Nomer</th>
+        <th>Bahan Bakar</th>
+        <th>CC</th>
+        <th>Warna</th>
+        <th>Harga</th>
+        <th>Stock</th>
+    </tr>
+    <tr th:each="listSepeda :${listSepeda}">
+        <td th:text="${listSepeda.id}"></td>
+        <td th:text="${listSepeda.name}"></td>
+        <td th:text="${listSepeda.kode}"></td>
+        <td th:text="${listSepeda.merk}"></td>
+        <td th:text="${listSepeda.platNomor}"></td>
+        <td th:text="${listSepeda.bahanBakar}"></td>
+        <td th:text="${listSepeda.cc}"></td>
+        <td th:text="${listSepeda.warna}"></td>
+        <td th:text="${listSepeda.harga}"></td>
+        <td th:text="${listSepeda.stock}"></td>
+        <td>
+            <a th:href="@{~/sepeda/edit/{id}(id=${listSepeda.id})}">Edit</a>
+            <a th:href="@{~/sepeda/delete/{id}(id=${listSepeda.id})}">Delete</a>
+            <a th:href="@{~/sepeda/detail/{id}(id=${listSepeda.id})}">Detail</a>
+        </td>
+    </tr>
+    </thead>
+</table>
+</body>
+</html>

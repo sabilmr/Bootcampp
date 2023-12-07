@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Handphone - Index</h2>
+<a th:href="@{~/handphone/add}">ADEDE</a>
+<p>Welcome to handphone</p>
+<p th:text="${datajudul}">judul</p>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>CODE</th>
+        <th>NAME</th>
+        <th>RAM</th>
+        <th>BATRAI</th>
+        <th>HARGA</th>
+    </tr>
+    <tr th:each=" listHandphone :${listHandphone}">
+        <td th:text="${listHandphone.id}"></td>
+        <td th:text="${listHandphone.code}"></td>
+        <td th:text="${listHandphone.name}"></td>
+        <td th:text="${listHandphone.ram}"></td>
+        <td th:text="${listHandphone.batrai}"></td>
+        <td>Rp<strong th:text="${listHandphone.harga}"></strong></td>
+        <td>
+            <a th:href="@{~/handphone/edit/{id}(id=${listHandphone.id})}">Edit</a>
+            <a th:href="@{~/handphone/delete/{id}(id=${listHandphone.id})}">Delete</a>
+            <a th:href="@{~/handphone/detail/{id}(id=${listHandphone.id})}">Detail</a>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="5">Jumlah Data</td>
+        <td><strong th:text="${jumlah}"></strong>Item</td>
+    </tr>
+    </thead>
+</table>
+</body>
+</html>

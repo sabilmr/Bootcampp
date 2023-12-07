@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Mahasiswa-Index</title>
+</head>
+<body>
+        <h2>MAHASISWA</h2>
+        <a th:href="@{~/home}">Home</a>
+        <a th:href="@{~/mahasiswa/add}">Add Mahasiswa</a>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Nim</th>
+        <th>Gender</th>
+        <th>Alamat</th>
+        <th>Tempat Lahir</th>
+        <th>Tanggal Lahir</th>
+        <th>Agama</th>
+        <th>Jurusan</th>
+        <th>Fakultas</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="mahasiswa :${dataList}">
+        <td th:text="${mahasiswa.name}"></td>
+        <td th:text="${mahasiswa.nim}"></td>
+        <td th:text="${mahasiswa.gender}"></td>
+        <td th:text="${mahasiswa.alamat}"></td>
+        <td th:text="${mahasiswa.tmptLahir}"></td>
+        <td th:text="${mahasiswa.tglLahir}"></td>
+        <td th:text="${mahasiswa.agama}"></td>
+        <td th:text="${mahasiswa.jurusanName}"></td>
+        <td th:text="${mahasiswa.fakultasName}"></td>
+        <td>
+            <a th:href="@{~/mahasiswa/edit/{id}(id=${mahasiswa.id})}">Edit</a>
+            <a th:href="@{~/mahasiswa/delete/{id}(id=${mahasiswa.id})}">Delete</a>
+            <a th:href="@{~/mahasiswa/detail/{id}(id=${mahasiswa.id})}">Detail</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Kelas Detail</title>
+</head>
+<body>
+<form th:action="@{~/kelasdetail/save}" method="post">
+    <label>Kelas :</label><br>
+    <select name="kelasId">
+        <option value="">Pilih Kelas</option>
+        <option th:each="kelas :${dataKelas}"
+                th:value="${kelas.id}"
+                th:text="|${kelas.code}|"></option>
+    </select><br>
+
+    <label>Name Mahasiswa :</label><br>
+    <select name="mahasiswaId">
+        <option value="">Pilih Mahasiswa</option>
+        <option th:each="mahasiswa :${dataSiswa}"
+                th:value="${mahasiswa.id}"
+                th:text="|${mahasiswa.name}|"></option>
+    </select><br>
+
+    <label>Status :</label><br>
+    <input type="text" name="status" placeholder="Enter Status"><br>
+
+    <button type="submit">Save</button>
+    <a th:href="@{~/kelasdetail}">Back</a>
+</form>
+
+</body>
+</html>

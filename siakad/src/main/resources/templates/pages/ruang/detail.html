@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Ruang-Detail</title>
+</head>
+<body>
+<form th:action="@{~/ruang/save}" method="post">
+    <label>Code :</label><br>
+    <input type="text" name="code" th:value="${ruang.code}" placeholder="Enter code"><br>
+
+    <label>Name :</label><br>
+    <input type="text" name="name" th:value="${ruang.name}" placeholder="Enter name"><br>
+
+    <label>Gedung :</label><br>
+    <input type="text" name="gedungName" th:value="${ruang.gedungName}" placeholder="Enter Gedung"><br>
+
+    <label>Jumlah Lantai :</label><br>
+    <input type="text" name="jumlahLantai" th:value="${ruang.jumlahLantai}" placeholder="Enter Jumlah Lantai"><br>
+
+    <a th:href="@{~/ruang}">Back</a>
+
+</form>
+</body>
+</html>

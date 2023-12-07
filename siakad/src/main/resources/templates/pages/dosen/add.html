@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dosen Add</title>
+</head>
+<body>
+<form th:action="@{~/dosen/save}" method="post">
+    <label>Nip :</label><br>
+    <input type="text" id="nip" name="nip" placeholder="Enter Nip"><br>
+
+    <label>Name :</label><br>
+    <input type="text" id="name" name="name" placeholder="Enter Name"><br>
+
+    <label>Jenis Kelamin :</label><br>
+    <select name="jk">
+        <option value="">Pilih Gender</option>
+        <option value="Pria">Pria</option>
+        <option value="Wanita">Wanita</option>
+    </select><br>
+
+    <label>Alamat :</label><br>
+    <input type="text" id="alamat" name="alamat" placeholder="Enter Alamat"><br>
+
+    <label>Gelar :</label><br>
+    <input type="text" id="gelar" name="gelar" placeholder="Enter Gelar"><br>
+
+    <button type="submit">Save</button>
+    <a th:href="@{~/dosen}">Back</a>
+
+</form>
+
+</body>
+</html>

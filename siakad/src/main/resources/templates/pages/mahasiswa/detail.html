@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail Mahasiswa</title>
+</head>
+<body>
+<form th:action="@{~/mahasiswa/save}" method="post">
+    <label>Name :</label><br>
+    <input type="text" name="name" th:value="${mahasiswa.name}"><br>
+
+    <label>Nim :</label><br>
+    <input type="text" name="nim" th:value="${mahasiswa.nim}"><br>
+
+    <label>Gender :</label><br>
+    <input type="text" name="gender" th:value="${mahasiswa.gender}"><br>
+
+    <label>Alamat :</label><br>
+    <input type="text" name="alamat" th:value="${mahasiswa.alamat}"><br>
+
+    <label>Tempat Lahir :</label><br>
+    <input type="text" name="tmptLahir" th:value="${mahasiswa.tmptLahir}"><br>
+
+    <label>Tanggal Lahir :</label><br>
+    <input type="date" name="tglLahir" th:value="${mahasiswa.tglLahir}"><br>
+
+    <label>Agama :</label><br>
+    <input type="text" name="agama" th:value="${mahasiswa.agama}"><br>
+
+    <label>Jurusan :</label><br>
+    <input type="text" name="jurusanName" th:value="${mahasiswa.jurusanName}"><br>
+
+    <a th:href="@{~/mahasiswa}">Back</a>
+</form>
+
+</body>
+</html>

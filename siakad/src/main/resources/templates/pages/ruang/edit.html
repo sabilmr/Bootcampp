@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Dosen</title>
+</head>
+<body>
+<form th:action="@{~/ruang/update}" method="post">
+    <input type="hidden" id="id" name="id" th:value="${ruang.id}">
+
+    <label>Gedung :</label><br>
+    <select name="gedungId">
+        <option value="">Pilih Gedung</option>
+        <option th:each="gedung :${dataGedung}"
+                th:value="${gedung.id}"
+                th:text="|${gedung.code} - ${gedung.name} - ${gedung.jumlahLantai}|"
+                th:selected="${ruang.gedungId == gedung.id}"></option>
+    </select><br>
+
+    <label>Code :</label><br>
+    <input type="text" name="code" th:value="${ruang.code}" placeholder="Enter Code"><br>
+
+    <label>Name :</label><br>
+    <input type="text" name="name" th:value="${ruang.name}" placeholder="Enter name"><br>
+
+    <button type="submit">Save</button>
+    <a th:href="@{~/ruang}">Back</a>
+
+</form>
+</body>
+</html>

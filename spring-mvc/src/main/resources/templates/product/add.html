@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/main}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="row mb-2" layout:fragment="breadcrumb">
+  <div class="col-sm-6">
+    <h1 class="m-0">ADD PRODUCT</h1>
+  </div>
+  <div class="col-sm-6">
+    <ol class="breadcrumb float-sm-right">
+      <li class="breadcrumb-item"><a href="#">Home</a></li>
+      <li class="breadcrumb-item active">ADD PRODUCT</li>
+    </ol>
+  </div>
+</div>
+<div class="row" layout:fragment="content">
+  <div class="col-lg-12 col-md-12 col-sm-12">
+    <div class="card card-primary">
+      <div class="card-header">
+        <h3 class="card-title">NEW PRODUCT</h3>
+      </div>
+      <form th:action="@{~/product/save}" method="post" >
+        <div class="card-body">
+          <div class="form-group">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" name="id" id="id" placeholder="Enter Id">
+          </div>
+          <div class="form-group">
+            <label for="code">Kode</label>
+            <input type="text" class="form-control" name="code" id="code" placeholder="Enter Code">
+          </div>
+          <div class="form-group">
+            <label for="name">Nama</label>
+            <input type="text" class="form-control" name="name" id="name" placeholder="Enter Name">
+          </div>
+          <div class="form-group">
+            <label for="category">Kategori</label>
+            <input type="text" class="form-control" name="category" id="category" placeholder="Category">
+          </div>
+          <div class="form-group">
+            <label for="description">Keterangan</label>
+            <textarea type="text" class="form-control" name="description" id="description" placeholder="Desc"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="price">Harga</label>
+            <input type="text" class="form-control" name="price" id="price" placeholder="price">
+          </div>
+          <div class="form-group">
+            <label for="stock">Stok</label>
+            <input type="text" class="form-control" name="stock" id="stock" placeholder="Stock">
+          </div>
+        </div>
+        <div class="card-footer">
+          <button type="submit" class="btn btn-primary">Sumbit</button>
+        </div>
+      </form>
+      </div>
+  </div>
+</div>
+</body>
+</html>

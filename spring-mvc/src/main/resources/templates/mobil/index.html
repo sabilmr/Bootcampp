@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+      <h1>MOBIL - INDEX</h1>
+      <a th:href="@{~/mobil/add}">New Mobil</a>
+      <p>Welcome to Mobil</p>
+<p th:text="${datajudul}">judul</p>
+
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Kode</th>
+        <th>Name</th>
+        <th>Merk</th>
+        <th>PlatNomor</th>
+        <th>BahanBakar</th>
+        <th>Cc</th>
+        <th>Warna</th>
+        <th>Tipe</th>
+        <th>Harga</th>
+        <th>Stock</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="mobil :${mobil}">
+        <td th:text="${mobil.id}"></td>
+        <td th:text="${mobil.kode}"></td>
+        <td th:text="${mobil.name}"></td>
+        <td th:text="${mobil.merk}"></td>
+        <td th:text="${mobil.platNomor}"></td>
+        <td th:text="${mobil.bahanBakar}"></td>
+        <td th:text="${mobil.cc}"></td>
+        <td th:text="${mobil.warna}"></td>
+        <td th:text="${mobil.tipe}"></td>
+        <td>Rp.<strong th:text="${mobil.harga}"></strong></td>
+        <td>Rp.<strong th:text="${mobil.stock}"></strong>pcs</td>
+        <td>
+            <a th:href="@{~/mobil/edit/{id}(id=${mobil.id})}">Edit</a>
+            <a th:href="@{~/mobil/delete/{id}(id=${mobil.id})}">Delete</a>
+            <a th:href="@{~/mobil/detail/{id}(id=${mobil.id})}">Detail</a>
+        </td>
+
+    </tr>
+    <tr>
+        <td colspan="6">jumlah Data</td>
+        <td><strong th:text="${jumlah}"></strong>Item</td>
+    </tr>
+    </tbody>
+</table>
+
+
+</body>
+</html>

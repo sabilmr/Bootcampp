@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>ADD BUKU</h1>
+<form th:action="@{~/buku/save}" method="post">
+  <label>ID</label><br>
+  <input type="text" name="id" id="id"><br/>
+
+  <label>Judul</label><br>
+  <input type="text" name="judul" id="judul"><br/>
+
+  <label>Pengarang</label><br>
+  <input type="text" name="pengarang" id="pengarang"><br/>
+
+  <label>TahunTerbit</label><br>
+  <input type="text" name="tahunTerbit" id="tahunTerbit"><br/>
+
+  <label>JumlahHalaman</label><br>
+  <input type="text" name="jumlahHalaman" id="jumlahHalaman"><br/>
+
+  <label>Penerbit</label><br>
+  <input type="text" name="penerbit" id="penerbit"><br/>
+
+  <label>Harga</label><br>
+  <input type="text" name="harga" id="harga"><br/>
+
+  <label>Stock</label><br>
+  <input type="text" name="stock" id="stock"><br/>
+
+  <label>Bahasa</label><br>
+  <input type="text" name="bahasa" id="bahasa"> <br/>
+
+  <label>Deskripsi</label><br>
+  <textarea type="text" name="deskripsi" id="deskripsi" rows="5" cols="20"></textarea><br/>
+
+  <button type="submit">Simpan</button>
+</form>
+
+</body>
+</html>

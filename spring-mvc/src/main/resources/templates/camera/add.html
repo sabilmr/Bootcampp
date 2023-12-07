@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultrag.net.nz/thymeleaf/layout" layout:decorate="~{layouts/main}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="row mb-2" layout:fragment="breadcrumb">
+  <div class="col-sm-6">
+    <h1 class="mb-0">ADD CAMERA</h1>
+  </div>
+  <div class="col-sm-6">
+    <ol class="breadcrumb float-sm-right">
+      <li class="breadcrumb-item"><a href="#">Home</a></li>
+      <li class="breadcrumb-item active">ADD CAMERA</li>
+    </ol>
+  </div>
+</div>
+<div class="row" layout:fragment="content">
+  <div class="col-lg-12 col-md-12 col-sm-12">
+    <div class="card card-primary">
+      <div class="card-header">
+        <h3 class="card-title">NEW CAMERA</h3>
+      </div>
+      <form th:action="@{~/camera/save}" method="post">
+        <div class="card-body">
+          <div class="form-group">
+          <label for="id">Id</label>
+          <input type="text" class="form-control" name="id" id="id">
+          </div>
+
+          <div class="form-group">
+          <label for="kode">Kode</label>
+          <input type="text"class="form-control" name="kode" id="kode">
+          </div>
+
+          <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" name="name" id="name">
+          </div>
+
+          <div class="form-group">
+          <label for="merk">Merk</label>
+          <input type="text" class="form-control" name="merk" id="merk">
+          </div>
+
+          <div class="form-group">
+          <label for="tipe">Tipe</label>
+          <input type="text" class="form-control" name="tipe" id="tipe">
+          </div>
+
+          <div class="form-group">
+          <label for="sensor">Sensor</label>
+          <input type="text" class="form-control" name="sensor" id="sensor">
+          </div>
+          <div class="form-group">
+          <label for="fitur">Fitur</label>
+          <input type="text" class="form-control" name="fitur" id="fitur">
+          </div>
+          <div class="form-group">
+          <label for="lensa">Lensa</label>
+          <input type="text" class="form-control" name="lensa" id="lensa">
+          </div>
+          <div class="form-group">
+          <label for="aksesoris">Aksesoris</label>
+          <input type="text" class="form-control" name="aksesoris" id="aksesoris" >
+          </div>
+          <div class="form-group">
+          <label for="harga">Harga</label>
+          <input type="text" class="form-control" name="harga" id="harga">
+          </div>
+        </div>
+        <div class="card-footer">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+        </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>add</title>
+</head>
+<body>
+<form th:action="@{~/motor/save}" method="post">
+    <label>Id</label><br>
+    <input type="text" id="id" name="id"><br>
+
+    <label>Name</label><br>
+    <input type="text" id="name" name="name"><br>
+
+    <label>Jenis</label><br>
+    <input type="text" id="jenis" name="jenis"><br>
+
+    <label>Bahan Bakar</label><br>
+    <input type="text" id="bahanBakar" name="bahanBakar"><br>
+
+    <label>Plat Nomor</label><br>
+    <input type="text" id="platNomor" name="platNomor"><br>
+
+    <label>Harga</label><br>
+    <input type="text" id="harga" name="harga"><br>
+
+    <button type="submit">submit</button>
+</form>
+</body>
+</html>

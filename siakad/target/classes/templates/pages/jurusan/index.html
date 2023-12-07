@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Jurusan-Index</title>
+</head>
+<body>
+    <h2>JURUSAN</h2>
+    <a th:href="@{~/home}">Home</a> &nbsp;
+    <a th:href="@{~/jurusan/add}">Add Jurusan</a>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Fakultas</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="jurusan :${dataList}">
+        <td th:text="${jurusan.code}"></td>
+        <td th:text="${jurusan.name}"></td>
+        <td th:text="${jurusan.fakultasName}"></td>
+        <td>
+            <a th:href="@{~/jurusan/edit/{id}(id=${jurusan.id})}">Edit</a>
+            <a th:href="@{~/jurusan/delete/{id}(id=${jurusan.id})}">Delete</a>
+            <a th:href="@{~/jurusan/detail/{id}(id=${jurusan.id})}">Detail</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

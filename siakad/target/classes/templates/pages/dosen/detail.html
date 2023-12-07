@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{~/dosen/save}" method="post">
+    <label>Nip :</label><br>
+    <input type="text" id="nip" name="nip" th:value="${dosen.nip}" placeholder="Enter Nip"><br>
+
+    <label>Name :</label><br>
+    <input type="text" id="name" name="name" th:value="${dosen.name}" placeholder="Enter name"><br>
+
+    <label>Jenis Kelamin :</label><br>
+    <input type="text" id="jk" name="jk" th:value="${dosen.jk}" placeholder="Enter jk"><br>
+
+    <label>Alamat :</label><br>
+    <input type="text" id="alamat" name="alamat" th:value="${dosen.alamat}" placeholder="Enter alamat"><br>
+
+    <label>Gelar :</label><br>
+    <input type="text" id="gelar" name="gelar" th:value="${dosen.gelar}" placeholder="Enter gelar"><br>
+
+    <a th:href="@{~/dosen}">Back</a>
+
+</form>
+</body>
+</html>

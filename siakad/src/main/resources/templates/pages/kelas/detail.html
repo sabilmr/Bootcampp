@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kelas-Detail</title>
+</head>
+<body>
+<form th:action="@{~/kelas/save}" method="post">
+    <label>Code :</label><br>
+    <input type="text" name="code" th:value="${kelas.code}" placeholder="Enter code"><br>
+
+    <label>Name Hari :</label><br>
+    <input type="text" name="name" th:value="${kelas.nameHari}" placeholder="Enter Name Hari"><br>
+
+    <label>Jam Mulai :</label><br>
+    <input type="text" name="jamMulai" th:value="${kelas.jamMulai}" placeholder="Enter Jam Mulai"><br>
+
+    <label>Jam Selesai :</label><br>
+    <input type="text" name="jamSelesai" th:value="${kelas.jamSelesai}" placeholder="Enter Jam Selesai"><br>
+
+    <label>Status :</label><br>
+    <input type="text" name="status" th:value="${kelas.status}" placeholder="Enter Status"><br>
+
+    <label>Semester :</label><br>
+    <input type="text" name="semester" th:value="${kelas.semester}" placeholder="Enter Semester"><br>
+
+    <label>Kuota :</label><br>
+    <input type="text" name="kuota" th:value="${kelas.kuota}" placeholder="Enter Kuota"><br>
+
+    <label>Bisa Online :</label><br>
+    <input type="text" name="bisaOnline" th:checked="${kelas.bisaOnline}" placeholder="Enter Bisa Online"><br>
+
+    <label>Ruang :</label><br>
+    <input type="text" name="ruangName" th:value="${kelas.ruangName}" placeholder="Enter Bisa Online"><br>
+
+    <label>Dosen :</label><br>
+    <input type="text" name="dosenName" th:value="${kelas.dosenName}" placeholder="Enter Bisa Online"><br>
+
+    <label>Mata Kuliah :</label><br>
+    <input type="text" name="mataKuliahName" th:value="${kelas.mataKuliahName}" placeholder="Enter Bisa Online"><br>
+
+    <a th:href="@{~/kelas}">Back</a>
+</form>
+</body>
+</html>

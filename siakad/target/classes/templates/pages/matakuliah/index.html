@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mata Kuliah</title>
+</head>
+<body>
+        <h2>MATA KULIAH</h2>
+        <a th:href="@{~/home}">Home</a>
+        <a th:href="@{~/matakuliah/add}">Add Mata Kuliah</a>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>SKS</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="mataKuliah :${dataList}">
+        <td th:text="${mataKuliah.code}"></td>
+        <td th:text="${mataKuliah.name}"></td>
+        <td th:text="${mataKuliah.sks}"></td>
+        <td>
+            <a th:href="@{~/matakuliah/edit/{id}(id=${mataKuliah.id})}">Edit</a>
+            <a th:href="@{~/matakuliah/delete/{id}(id=${mataKuliah.id})}">Delete</a>
+            <a th:href="@{~/matakuliah/detail/{id}(id=${mataKuliah.id})}">Detail</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        #myHeader{
+            background-color: lightblue;
+            color: black;
+            padding: 40px;
+            text-align: center;
+        }
+        .city{
+            background-color: tomato;
+            color: white;
+            padding:  10px;
+        }
+    </style>
+</head>
+<body>
+<h2>The id Attribute</h2>
+<p>Use CSS to style an element with the id "myHeader":</p>
+
+<h1 id="myHeader">My Header</h1>
+<button onclick="displayResult()">change text</button>
+
+<script>
+    function displayResult(){
+        document.getElementById("myHeader").innerHTML= "i have nice tray";
+    }
+</script>
+
+<h2 class="city">LONDON</h2>
+<p>London is the capital of England.</p>
+
+<h2 class="city">PARIS</h2>
+<p>Paris is the capital of France.</p>
+
+<h2 class="city">YOKYO</h2>
+<p>Tokyo is the capital of Japan.</p>
+
+
+</body>
+</html>

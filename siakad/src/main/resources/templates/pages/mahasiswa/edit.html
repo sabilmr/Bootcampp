@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Mahasiswa</title>
+</head>
+<body>
+<form th:action="@{~/mahasiswa/update}" method="post">
+    <input type="hidden" name="id" th:value="${mahasiswa.id}"><br>
+
+    <label>Jurusan :</label><br>
+    <select name="jurusanId">
+        <option value="">Pilih Jurusan</option>
+        <option th:each="jurusan :${dataJurusan}"
+                th:value="${jurusan.id}"
+                th:text="|${jurusan.code} - ${jurusan.name}|"
+                th:selected="${mahasiswa.jurusanId == mahasiswa.id}"></option>
+    </select><br>
+
+    <label>Fakultas :</label><br>
+    <select name="fakultasId">
+        <option value="">Pilih Fakultas</option>
+        <option th:each="fakultas :${dataFakultas}"
+                th:value="${fakultas.id}"
+                th:text="|${fakultas.code} - ${fakultas.name}|"
+                th:selected="${mahasiswa.fakultasId == fakultas.id}"></option>
+
+    </select><br>
+
+    <label>Name :</label><br>
+    <input type="text" name="name" th:value="${mahasiswa.name}"><br>
+
+    <label>Nim :</label><br>
+    <input type="text" name="nim" th:value="${mahasiswa.nim}" placeholder="Enter Nim"><br>
+
+    <label>Gender :</label><br>
+    <select name="gender">
+        <option value="">Pilih Gender</option>
+        <option value="Pria">Pria</option>
+        <option value="Wanita">Wanita</option>
+    </select><br>
+
+    <label>Alamat :</label><br>
+    <input type="text" name="alamat" th:value="${mahasiswa.alamat}"><br>
+
+    <label>Tempat Lahir :</label><br>
+    <input type="text" name="tmptLahir" th:value="${mahasiswa.tmptLahir}"><br>
+
+    <label>Tanggal Lahir :</label><br>
+    <input type="date" name="tglLahir" th:value="${mahasiswa.tglLahir}"><br>
+
+    <label>Agama :</label><br>
+    <select name="agama">
+        <option value="Islam">Islam</option>
+        <option value="Kristen Protestan">Kristen Protestan</option>
+        <option value="Kristen Katolik">Kristen Katolik</option>
+        <option value="Hindu">Hindu</option>
+        <option value="Buddha">Buddha</option>
+        <option value="Konghucu">Konghucu</option>
+    </select><br>
+
+   <button type="submit">Save</button>
+    <a th:href="@{~/mahasiswa}">Back</a>
+</form>
+
+</body>
+</html>

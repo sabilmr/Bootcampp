@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/main}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="row mb-2" layout:fragment="breadcrumb">
+  <div class="col-sm-6">
+    <h1 class="m-0">INDEX CAMERA</h1>
+  </div>
+  <div class="col-sm-6">
+    <ol class="breadcrumb float-sm-right">
+      <li class="breadcrumb-item"><a href="#">Home</a></li>
+      <li class="breadcrumb-item active">Camera</li>
+    </ol>
+  </div>
+</div>
+<div class="row" layout:fragment="content">
+  <div class="col-lg-12 col-md-12 col-sm-12">
+    <div class="card">
+      <div class="card-header bg-primary">
+        <h3 class="card-title">Camera</h3>
+
+        <div class="card-tools">
+          <div class="input-group input-group-sm" style="width: 200px;">
+            <input type="text" name="table-search" class="form-control float-right" placeholder="Search">
+            <div class="input-group-append">
+              <button type="submit" class="btn-default"><i class="fas fas-search"></i></button>
+              <a th:href="@{~/camera/add}" id="btn-add" class="btn btn-primary"><i class="fas fa-plus"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <table id="table-data" class="table">
+          <thead>
+          <tr>
+            <th>Id</th>
+            <th>Kode</th>
+            <th>Name</th>
+            <th>Merk</th>
+            <th>Tipe</th>
+            <th>Sensor</th>
+            <th>Fitur</th>
+            <th>Lensa</th>
+            <th>Aksesoris</th>
+            <th>Harga</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr th:each="camera :${camera}">
+            <td th:text="${camera.id}"></td>
+            <td th:text="${camera.kode}"></td>
+            <td th:text="${camera.name}"></td>
+            <td th:text="${camera.merk}"></td>
+            <td th:text="${camera.tipe}"></td>
+            <td th:text="${camera.sensor}"></td>
+            <td th:text="${camera.fitur}"></td>
+            <td th:text="${camera.lensa}"></td>
+            <td th:text="${camera.aksesoris}"></td>
+            <td>Rp.<strong th:text="${camera.harga}"></strong></td>
+            <td>
+              <a th:href="@{~/camera/edit/{id}(id=${camera.id})}" class="btn btn-xs btn-warning btn-edit">
+                <i class="fas fa-edit"></i>
+              </a>
+              <a th:href="@{~/camera/delete/{id}(id=${camera.id})}" class="btn btn-xs btn-danger btn-delete">
+                <i class="fas fa-trash"></i>
+              </a>
+              <a th:href="@{~/camera/detail/{id}(id=${camera.id})}" class="btn btn-xs btn-success btn-detail">
+                <i class="fas fa-eye"></i>
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="8">Jumlah Data</td>
+            <td><strong th:text="${jumlah}"></strong>Item</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<p></p>
+</body>
+</html>

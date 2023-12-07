@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Gedung</title>
+</head>
+<body>
+<form th:action="@{~/gedung/save}" method="post">
+
+    <label>Code :</label><br>
+    <input type="text" name="code" placeholder="Enter Code"><br>
+
+    <label>Name :</label><br>
+    <input type="text" name="name" placeholder="Enter Name"><br>
+
+    <label>Jumlah Lantai :</label><br>
+    <input type="text" name="jumlahLantai" placeholder="Enter Jumlah Lantai"><br>
+
+    <button type="submit">Save</button>
+    <a th:href="@{~/gedung}">Back</a>
+</form>
+
+</body>
+</html>

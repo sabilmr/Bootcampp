@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Siswa Add</title>
+</head>
+<body>
+<form th:action="@{~/siswa/save}" method="post">
+    <label>ID</label>
+    <input type="text" id="id" name="id">
+
+    <label>NAME</label>
+    <input type="text" id="name" name="name">
+
+    <label>TEMPAT KULIAH</label>
+    <input type="text" id="tempatKuliah" name="tempatKuliah">
+
+    <label>JURUSAN</label>
+    <input type="text" id="jurusan" name="jurusan">
+
+    <label>ALAMAT</label>
+    <input type="text" id="alamat" name="alamat">
+
+    <button type="submit">SIMPAN</button>
+</form>
+</body>
+</html>

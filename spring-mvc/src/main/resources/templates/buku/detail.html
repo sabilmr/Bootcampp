@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Detail Buku</h1>
+<form th:action="@{~/buku/save}" method="post">
+
+  <label>Id</label><br>
+  <input type="text" name="id" id="id" th:value="${buku.id}"><br/>
+
+  <label>Judul</label><br>
+  <input type="text" name="judul" id="judul" th:value="${buku.judul}"><br/>
+
+  <label>Pengarang</label><br>
+  <input type="text" name="pengarang" id="pengarang" th:value="${buku.pengarang}"><br/>
+
+  <label>TahunTerbit</label><br>
+  <input type="text" name="tahunTerbit" id="tahunTerbit"  th:value="${buku.tahunTerbit}"><br/>
+
+  <label>JumlahHalaman</label><br>
+  <input type="text" name="jumlahHalaman" id="jumlahHalaman" th:value="${buku.jumlahHalaman}"><br/>
+
+  <label>Penerbit</label><br>
+  <input type="text" name="penerbit" id="penerbit" th:value="${buku.penerbit}"><br/>
+
+  <label>Harga</label><br>
+  <input type="text" name="harga" id="harga" th:value="${buku.harga}"><br/>
+
+  <label>Stock</label><br>
+  <input type="text" name="stock" id="stock" th:value="${buku.stock}"><br/>
+
+  <label>Bahasa</label><br>
+  <input type="text" name="bahasa" id="bahasa" th:value="${buku.bahasa}"> <br/>
+
+  <label>Deskripsi</label><br>
+  <textarea typeof="text" name="deskripsi" id="deskripsi" rows="5" cols="20" th:text="${buku.deskripsi}"></textarea><br/>
+
+</form>
+
+</body>
+</html>

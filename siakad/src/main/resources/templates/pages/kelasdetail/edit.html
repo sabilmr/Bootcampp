@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Kelas Detail Edit</title>
+</head>
+<body>
+<form th:action="@{~/kelasdetail/update}" method="post">
+    <input type="hidden" name="id" th:value="${kelasDetail.id}">
+
+    <label>Kelas :</label><br>
+    <select name="kelasId">
+        <option value="">Pilih Kelas</option>
+        <option th:each="kelas :${dataKelas}"
+                th:value="${kelas.id}"
+                th:text="|${kelas.code}|"
+                th:selected="${kelasDetail.kelasId == kelas.id}"></option>
+    </select><br>
+
+    <label>Name Mahasiswa :</label><br>
+    <select name="mahasiswaId">
+        <option value="">Pilih Mahasiswa</option>
+        <option th:each="mahasiswa :${dataSiswa}"
+                th:value="${mahasiswa.id}"
+                th:text="|${mahasiswa.name}|"
+                th:selected="${kelasDetail.mahasiswaId == mahasiswa.id}"></option>
+    </select><br>
+
+    <label>Status :</label><br>
+    <input type="text" name="status" th:value="${kelasDetail.status}" placeholder="Enter Status"><br>
+
+    <button type="submit">Save</button>
+    <a th:href="@{~/kelasdetail}">Back</a>
+</form>
+
+</body>
+</html>

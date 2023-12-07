@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+      <h1>KOPI - INDEX</h1>
+      <a th:href="@{~/kopi/add}">KALAU MAU ADEDE DISINI</a>
+      <p>WELCOME TO KOPI</p>
+      <p th:text="${datajudul}">judul</p>
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Kode</th>
+        <th>NameKopi</th>
+        <th>Diproduksi</th>
+        <th>Deskripsi</th>
+        <th>Harga</th>
+        <th>Stock</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="kopi :${kopi}">
+        <td th:text="${kopi.id}"></td>
+        <td th:text="${kopi.kode}"></td>
+        <td th:text="${kopi.nameKopi}"></td>
+        <td th:text="${kopi.diproduksi}"></td>
+        <td th:text="${kopi.deskripsi}"></td>
+        <td>Rp.<strong th:text="${kopi.harga}"></strong></td>
+        <td><strong th:text="${kopi.stock}"></strong>pcs</td>
+        <td>
+            <a th:href="@{~/kopi/edit/{id}(id=${kopi.id})}">Edit</a>
+            <a th:href="@{~/kopi/delete/{id}(id=${kopi.id})}">Delete</a>
+            <a th:href="@{~/kopi/detail/{id}(id=${kopi.id})}">Detail</a>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="6">Jumlah Data</td>
+        <td><strong th:text="${jumlah}"></strong>Item</td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
